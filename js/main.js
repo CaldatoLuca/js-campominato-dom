@@ -23,11 +23,13 @@ function eventCell(element) {
   element.addEventListener("click", function () {
     console.log(element.innerHTML);
     element.classList.add("cell-bg");
+    elementScore.innerHTML = scoreCounter++;
   });
   elementButtonReset.addEventListener("click", function () {
     element.classList.remove("cell-bg");
     elementCellsContainer.classList.add("opacity");
     elementEndGame.classList.add("none");
+    scoreCounter = 1;
   });
 }
 function eventBomb(element) {
@@ -36,6 +38,9 @@ function eventBomb(element) {
     element.classList.add("cell-bomb-bg");
     elementEndGame.classList.remove("none");
     elementCellsContainer.classList.add("opacity");
+    elementEndGame.innerHTML = `<h4>Hai perso!</h4><h6>Il tuo punteggio è: ${
+      scoreCounter - 1
+    }.</h6>`;
   });
 }
 //*creo tante celle in base alla difficoltà (chiede il numero di celle da creare)
@@ -125,6 +130,10 @@ const elementButtonReset = document.getElementById("reset");
 const elementMessage = document.querySelector(".messages");
 const elementSelect = document.getElementById("levels");
 const elementEndGame = document.getElementById("end-game");
+const elementScore = document.querySelector(".score");
+
+//*variabili
+let scoreCounter = 1;
 
 //* evento click sul bottone
 elementButtonPlay.addEventListener("click", function () {
@@ -134,4 +143,5 @@ elementButtonPlay.addEventListener("click", function () {
   elementMessage.classList.toggle("none");
   elementCellsContainer.classList.remove("opacity");
   elementEndGame.classList.add("none");
+  scoreCounter = 1;
 });

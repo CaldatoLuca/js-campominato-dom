@@ -65,7 +65,8 @@ main .cells-container .cell-10 {
   width: calc(100% / 10);
   height: calc(100% / 10);
 }
-main h2 {
+main h2,
+main #end-game {
   color: red;
 }
 main #end-game {
@@ -83,4 +84,11 @@ main #end-game {
 */
 footer {
   padding: 1.25rem;
+  position: relative;
+}
+footer div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
