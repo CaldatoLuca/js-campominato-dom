@@ -28,9 +28,18 @@ function eventCell(element) {
     element.classList.remove("cell-bg");
   });
 }
-
+function eventBomb(element) {
+  element.addEventListener("click", function () {
+    console.log(element.innerHTML);
+    element.classList.add("cell-bomb-bg");
+  });
+  elementButtonReset.addEventListener("click", function () {
+    element.classList.remove("cell-bomb-bg");
+  });
+}
 //*creo tante celle in base alla difficoltà (chiede il numero di celle da creare)
-function createCells(count) {
+function createCells(count, array) {
+  let y = 0;
   for (let i = 1; i <= count; i++) {
     const elementCell = elementHtmlCreator(
       "div",
@@ -38,7 +47,12 @@ function createCells(count) {
       `cell-${Math.sqrt(count)}`
     );
     elementCell.append(i);
-    eventCell(elementCell);
+
+    if (array.includes(i)) {
+      eventBomb(elementCell);
+    } else {
+      eventCell(elementCell);
+    }
     elementCellsContainer.append(elementCell);
   }
   return elementCellsContainer;
@@ -57,17 +71,13 @@ function buttonReset() {
 function bombGenerator(num, minNum, maxNum) {
   const bombsPosition = [];
   let n = 0;
-  let count = 0;
 
   while (bombsPosition.length < num) {
     n = randomNumber(minNum, maxNum);
     if (!bombsPosition.includes(n)) {
       bombsPosition.push(n);
-
-      count++;
     }
   }
-
   return bombsPosition;
 }
 
@@ -94,12 +104,11 @@ function pratoFiorito() {
       break;
   }
 
-  //*richiamo la funzione che crea le celle
-  createCells(cellNumber);
-
   //*richiamo la funzione che genera le bombe
   const arrayBombe = bombGenerator(howManyBomb, 1, cellNumber);
   console.log(arrayBombe);
+  //*richiamo la funzione che crea le celle
+  createCells(cellNumber, arrayBombe);
 }
 
 /* 
@@ -122,3 +131,9 @@ elementButtonPlay.addEventListener("click", function () {
   elementCellsContainer.classList.toggle("none");
   elementMessage.classList.toggle("none");
 });
+
+// if (array[i] === elementCell.innerHTML) {
+//   eventBomb(elementCell);
+// } else {
+//   eventCell(elementCell);
+// }
