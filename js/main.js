@@ -30,6 +30,7 @@ function eventCell(element) {
     elementCellsContainer.classList.add("opacity");
     elementEndGame.classList.add("none");
     scoreCounter = 1;
+    elementCellsContainer.classList.remove("no-click");
   });
 }
 function eventBomb(element) {
@@ -41,6 +42,7 @@ function eventBomb(element) {
     elementEndGame.innerHTML = `<h4>Hai perso!</h4><h6>Il tuo punteggio è: ${
       scoreCounter - 1
     }.</h6>`;
+    elementCellsContainer.classList.add("no-click");
   });
 }
 //*creo tante celle in base alla difficoltà (chiede il numero di celle da creare)
@@ -144,4 +146,7 @@ elementButtonPlay.addEventListener("click", function () {
   elementCellsContainer.classList.remove("opacity");
   elementEndGame.classList.add("none");
   scoreCounter = 1;
+  elementCellsContainer.classList.remove("no-click");
 });
+
+//TODO se clicco su bomba si blocca il gioco
