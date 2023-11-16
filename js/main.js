@@ -26,15 +26,16 @@ function eventCell(element) {
   });
   elementButtonReset.addEventListener("click", function () {
     element.classList.remove("cell-bg");
+    elementCellsContainer.classList.add("opacity");
+    elementEndGame.classList.add("none");
   });
 }
 function eventBomb(element) {
   element.addEventListener("click", function () {
     console.log(element.innerHTML);
     element.classList.add("cell-bomb-bg");
-  });
-  elementButtonReset.addEventListener("click", function () {
-    element.classList.remove("cell-bomb-bg");
+    elementEndGame.classList.remove("none");
+    elementCellsContainer.classList.add("opacity");
   });
 }
 //*creo tante celle in base alla difficoltà (chiede il numero di celle da creare)
@@ -123,6 +124,7 @@ const elementButtonPlay = document.getElementById("play");
 const elementButtonReset = document.getElementById("reset");
 const elementMessage = document.querySelector(".messages");
 const elementSelect = document.getElementById("levels");
+const elementEndGame = document.getElementById("end-game");
 
 //* evento click sul bottone
 elementButtonPlay.addEventListener("click", function () {
@@ -130,10 +132,6 @@ elementButtonPlay.addEventListener("click", function () {
   pratoFiorito();
   elementCellsContainer.classList.toggle("none");
   elementMessage.classList.toggle("none");
+  elementCellsContainer.classList.remove("opacity");
+  elementEndGame.classList.add("none");
 });
-
-// if (array[i] === elementCell.innerHTML) {
-//   eventBomb(elementCell);
-// } else {
-//   eventCell(elementCell);
-// }
