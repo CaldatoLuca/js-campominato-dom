@@ -21,3 +21,4 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 
 1. Creo una funzione che genera numeri casuali da n a m (dove n e m sono gli estremi, da cambiare in base alla difficoltà 1/100 - 1/81 - 1/49)
 2. Inserisco in un array 16 numeri generati dalla funzione (controllando con .includes) se il numero è già presente, usare ciclo while (finche array.lenght non è 16 vado avanti ma se il numero è già presente non lo inserisco)
+3. Creo un evento click sugli elemnti dell' array bombe (aggiungo una classe che da sfondo rosso - tolgo la classe sfondo blu / faccio avvenire il reset, compare messaggio 'hai perso')

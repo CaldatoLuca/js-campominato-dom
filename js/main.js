@@ -41,6 +41,7 @@ function createCells(count) {
     eventCell(elementCell);
     elementCellsContainer.append(elementCell);
   }
+  return elementCellsContainer;
 }
 
 //*eveento sul bottone reset
@@ -56,12 +57,17 @@ function buttonReset() {
 function bombGenerator(num, minNum, maxNum) {
   const bombsPosition = [];
   let n = 0;
+  let count = 0;
+
   while (bombsPosition.length < num) {
     n = randomNumber(minNum, maxNum);
     if (!bombsPosition.includes(n)) {
       bombsPosition.push(n);
+
+      count++;
     }
   }
+
   return bombsPosition;
 }
 
@@ -90,9 +96,10 @@ function pratoFiorito() {
 
   //*richiamo la funzione che crea le celle
   createCells(cellNumber);
+
   //*richiamo la funzione che genera le bombe
-  bombGenerator(howManyBomb, 1, cellNumber);
-  console.log(bombGenerator(howManyBomb, 1, cellNumber));
+  const arrayBombe = bombGenerator(howManyBomb, 1, cellNumber);
+  console.log(arrayBombe);
 }
 
 /* 
