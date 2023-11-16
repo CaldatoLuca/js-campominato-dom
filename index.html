@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prato Fiorito</title>
+    <!-- !google font roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- !google font roboto/ -->
+    <!-- !my css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- !my css/ -->
+  </head>
+  <body class="flex">
+    <header class="flex">
+      <div class="titolo flex center">
+        <img src="img/Logo.png" alt="Logo sito" />
+        <h1>Campo Minato</h1>
+      </div>
+      <div class="buttons">
+        <select name="livelli" id="levels">
+          <option value="0">Select Level</option>
+          <option value="1" class="level">Level 1</option>
+          <option value="2" class="level">Level 2</option>
+          <option value="3" class="level">Level 3</option>
+        </select>
+        <button id="play" class="btn" type="button">Play</button>
+        <button id="reset" class="btn" type="button">Reset</button>
+      </div>
+    </header>
+
+    <main class="flex center">
+      <div class="cells-container flex none"></div>
+      <div class="messages text-center">
+        <h2>Press 'Play' to start the game</h2>
+        <h2>Press 'Reset' to start a new game</h2>
+      </div>
+    </main>
+
+    <footer>
+      <span>Made with &hearts; by <a href="index.html">Boolean</a></span>
+    </footer>
+    <!-- !my js -->
+    <script src="js/main.js"></script>
+    <!-- !my js/ -->
+  </body>
+</html>

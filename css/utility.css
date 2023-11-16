@@ -1,0 +1,40 @@
+/* 
+?--------
+!Display
+?--------
+*/
+.flex {
+  display: flex;
+}
+.none {
+  display: none;
+}
+/* 
+  ?--------
+  !Centratura
+  ?--------
+  */
+.center {
+  align-items: center;
+  justify-content: center;
+}
+.text-center {
+  text-align: center;
+}
+/* 
+  ?--------
+  !Bottone
+  ?--------
+  */
+.btn {
+  padding: 0px 30px;
+  height: 100%;
+}
+/* 
+  ?--------
+  !Colori
+  ?--------
+  */
+.cell-bg {
+  background-color: blue;
+}

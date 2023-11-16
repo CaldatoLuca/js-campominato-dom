@@ -1,0 +1,77 @@
+@import url(utility.css);
+/* 
+?--------
+!RESET
+?--------
+*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/* 
+?--------
+!COMMON
+?--------
+*/
+body {
+  height: 100vh;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+/* 
+?--------
+!HEADER
+?--------
+*/
+header {
+  justify-content: space-between;
+  padding: 1.875rem;
+}
+header .titolo img {
+  margin-right: 20px;
+}
+/* 
+?--------
+!MAIN
+?--------
+*/
+main {
+  background-color: aquamarine;
+  flex-grow: 1;
+}
+main .cells-container {
+  width: 700px;
+  height: 700px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+main .cells-container .cell {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .cells-container .cell-7 {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+}
+main .cells-container .cell-9 {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+main .cells-container .cell-10 {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+}
+main h2 {
+  color: red;
+}
+/* 
+?--------
+!FOOTER
+?--------
+*/
+footer {
+  padding: 1.25rem;
+}
