@@ -36,18 +36,19 @@ function eventCell(element) {
 function eventBomb(element) {
   element.addEventListener("click", function () {
     console.log(element.innerHTML);
-    element.classList.add("cell-bomb-bg");
     elementEndGame.classList.remove("none");
     elementCellsContainer.classList.add("opacity");
     elementEndGame.innerHTML = `<h4>Hai perso!</h4><h6>Il tuo punteggio è: ${
       scoreCounter - 1
     }.</h6>`;
     elementCellsContainer.classList.add("no-click");
+    element.classList.add("cell-bomb-bg");
   });
 }
 //*creo tante celle in base alla difficoltà (chiede il numero di celle da creare)
 function createCells(count, array) {
   let y = 0;
+
   for (let i = 1; i <= count; i++) {
     const elementCell = elementHtmlCreator(
       "div",
@@ -115,6 +116,7 @@ function pratoFiorito() {
   //*richiamo la funzione che genera le bombe
   const arrayBombe = bombGenerator(howManyBomb, 1, cellNumber);
   console.log(arrayBombe);
+
   //*richiamo la funzione che crea le celle
   createCells(cellNumber, arrayBombe);
 }
