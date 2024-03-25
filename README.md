@@ -1,6 +1,4 @@
-# README
-
-## Prato Fiorito - Gioco del Campo Minato
+# Gioco del Campo Minato
 
 ### Descrizione
 Questo progetto è una semplice implementazione del classico gioco del Campo Minato (Minesweeper), realizzato utilizzando HTML, CSS e JavaScript.
