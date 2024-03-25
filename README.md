@@ -1,28 +1,33 @@
-# Campo Minato
+# README
 
-_HTML+css+js_
+## Prato Fiorito - Gioco del Campo Minato
 
-Creare la logica che sta dietro il gioco Campo Minato, usando la griglia costruita nell' [esercizio precedente](https://github.com/CaldatoLuca/js-campominato-grid).
+### Descrizione
+Questo progetto è una semplice implementazione del classico gioco del Campo Minato (Minesweeper), realizzato utilizzando HTML, CSS e JavaScript.
 
-Il gioco
+### Funzionalità
+- Genera dinamicamente una griglia di celle in base al livello di difficoltà selezionato.
+- Distribuisce in modo casuale le mine (bombe) all'interno della griglia.
+- Consente al giocatore di rivelare le celle cliccandoci sopra.
+- Mostra il punteggio del giocatore.
+- Notifica il giocatore nel caso in cui venga colpita una bomba e termina il gioco.
 
-Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe.
-Attenzione: nella stessa cella può essere posizionata al massimo una bomba, perciò nell’array delle bombe non potranno esserci due numeri uguali.
+### Come Giocare
+1. Apri il file `index.html` in un browser web.
+2. Seleziona un livello di difficoltà dal menu a tendina.
+3. Clicca sul pulsante "Gioca" per avviare il gioco.
+4. Clicca sulle celle per rivelarle.
+5. Cerca di evitare di cliccare sulle celle con le bombe.
+6. Clicca sul pulsante "Reset" per iniziare una nuova partita.
 
-In seguito l'utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina. Altrimenti la cella cliccata si colora di azzurro e l'utente può continuare a cliccare sulle altre celle.
-La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
-Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
+### Struttura dei File
+- `index.html`: Contiene la struttura HTML dell'interfaccia di gioco.
+- `css/style.css`: Contiene gli stili per l'interfaccia di gioco.
+- `js/main.js`: Contiene il codice JavaScript per la logica di gioco.
 
-## Indice
+### Installazione e Utilizzo
+Per visualizzare questo progetto in locale, segui questi passaggi:
 
-- [Scomposizione del problema](#scomposizione-del-problema)
-
-## Scomposizione del problema
-
-1. Creo una funzione che genera numeri casuali da n a m (dove n e m sono gli estremi, da cambiare in base alla difficoltà 1/100 - 1/81 - 1/49)
-2. Inserisco in un array 16 numeri generati dalla funzione (controllando con .includes) se il numero è già presente, usare ciclo while (finche array.lenght non è 16 vado avanti ma se il numero è già presente non lo inserisco)
-3. Creo un evento click sugli elemnti dell' array bombe (aggiungo una classe che da sfondo rosso - tolgo la classe sfondo blu / faccio avvenire il reset, compare messaggio 'hai perso')
-
-TODO:
-Superbonus 2
-Finire spiegazione readme
+1. Clona questo repository sul tuo computer locale.
+2. Apri il file `index.html` nel tuo browser web.
+3. In alternativa, puoi visualizzare la demo live [qui](https://caldatoluca.github.io./campo-minato/).
